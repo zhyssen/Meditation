@@ -40,6 +40,8 @@ const app = () => {
             fakeDuration = this.getAttribute('data-time');
             const minutes = Math.floor(fakeDuration / 60);
             let seconds = Math.floor(fakeDuration % 60);
+            
+            // This doesn't work right
             seconds = seconds < 10 ? '0' + seconds : seconds;
             timeDisplay.innerHTML = `${minutes}:${seconds}`
         })
