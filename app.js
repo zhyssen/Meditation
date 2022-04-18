@@ -41,7 +41,6 @@ const app = () => {
             const minutes = Math.floor(fakeDuration / 60);
             let seconds = Math.floor(fakeDuration % 60);
             
-            // This doesn't work right
             seconds = seconds < 10 ? '0' + seconds : seconds;
             timeDisplay.innerHTML = `${minutes}:${seconds}`
         })
@@ -70,6 +69,8 @@ const app = () => {
 
         let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
         outline.style.strokeDashoffset = progress;
+        
+        seconds = seconds < 10 ? '0' + seconds : seconds;
         timeDisplay.textContent = `${minutes}:${seconds}`;
 
         if(currentTime >= fakeDuration) {
